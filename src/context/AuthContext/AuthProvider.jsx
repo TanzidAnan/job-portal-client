@@ -13,11 +13,16 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth,email,password)
     }
     useEffect( () =>{
-        onAuthStateChanged(auth,currentUser =>{
+       const unSubserce= onAuthStateChanged(auth,currentUser =>{
             if(currentUser){
-                
+                console.log(currentUser)
+                setUser(currentUser);
+                setLoading(false)
             }
         })
+        return() =>{
+            unSubserce()
+        }
     },[])
 
     const userInfo ={
