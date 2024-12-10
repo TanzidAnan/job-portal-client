@@ -14,14 +14,16 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
-
-        if (email) {
-            const emailregex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            emailregex.test(email);
+        const emailregex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const passwordregex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        if (!emailregex.test(email)) {
+           console.log("email");
+           return
         }
-
-        const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
-        regex.test(password);
+        if(!passwordregex.test(password)){
+            alert('password');
+            return
+        }
 
         createUser(email, password)
             .then(result => {
