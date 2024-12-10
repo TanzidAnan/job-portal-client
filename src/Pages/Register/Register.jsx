@@ -17,7 +17,7 @@ const Register = () => {
         const emailregex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         const passwordregex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
         if (!emailregex.test(email)) {
-           console.log("email");
+           alert("email");
            return
         }
         if(!passwordregex.test(password)){
