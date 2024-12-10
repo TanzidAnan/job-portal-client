@@ -8,6 +8,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element:<MainLayout></MainLayout>,
+        errorElement:<h2>Routes not fount</h2>,
         children:[
             {
                 path:'/',
