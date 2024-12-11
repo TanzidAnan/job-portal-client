@@ -4,13 +4,12 @@ import AuthContext from "../../context/AuthContext/AuthContext";
 
 const Navber = () => {
 
-    const { user } = useContext(AuthContext);
-    const { logOUt } = useContext(AuthContext)
+    const { user,logOUt } = useContext(AuthContext);
 
     const hendleLogout = () => {
         logOUt()
             .then(() => {
-                console.log('data')
+                alert('sign out')
             })
             .catch(error => {
                 console.log(error.message)
