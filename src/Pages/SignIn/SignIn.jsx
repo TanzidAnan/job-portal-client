@@ -1,9 +1,13 @@
 
 import Lottie from 'lottie-react';
 import loginlottyData from '../../assets/lotty/login.json'
+import { useContext } from 'react';
+import AuthContext from '../../context/AuthContext/AuthContext';
+import { auth } from '../../firebase/Firebase.init';
 
 const SignIn = () => {
 
+    const {signInUser} =useContext(AuthContext)
 
     const hendleLogin =(e) =>{
         e.preventDefault();
@@ -12,6 +16,13 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+        signInUser(email,password)
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.log(error.message)
+        })
 
     }
 
