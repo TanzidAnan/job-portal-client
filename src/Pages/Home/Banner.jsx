@@ -15,7 +15,10 @@ const Banner = () => {
                     <motion.h1
                     animate={{x:20,color:['red']}}
                     transition={{duration:2,delay:1,ease:easeInOut,repeat:Infinity}}
-                    className="text-5xl font-bold">Latest jobs for you</motion.h1>
+                    className="text-5xl font-bold">Latest <motion.span
+                    animate={{color:['#feca32','#9f91b6','#3769fa']}}
+                    transition={{duration:1.5, repeat:Infinity}}
+                    >jobs</motion.span> for you</motion.h1>
                   
                     <p className="py-6">
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
