@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import { easeInOut } from "motion";
+import tame1 from '../../assets/tame/tame1 (1).jpg'
 
 const Banner = () => {
     return (
@@ -8,7 +9,7 @@ const Banner = () => {
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="flex-1">
                     <img
-                        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                        src={tame1}
                         className="max-w-sm rounded-lg shadow-2xl" />
                 </div>
                 <div className="flex-1">
