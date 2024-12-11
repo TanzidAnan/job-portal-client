@@ -17,7 +17,7 @@ const Banner = () => {
                     <motion.img
                         src={tame2}
                         animate={{ x: [100, 150, 100] }}
-                        transition={{ duration: 7, repeat:Infinity}}
+                        transition={{ duration: 7,delay:3, repeat:Infinity}}
                         className="max-w-sm w-64 rounded-t-[40px] rounded-br-[40px] shadow-2xl border-l-4 border-b-4 border-blue-400" />
                 </div>
                 <div className="flex-1">
