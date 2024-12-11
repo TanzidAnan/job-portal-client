@@ -42,7 +42,9 @@ const Navber = () => {
             </div>
             <div className="navbar-end">
                 <Link to={'/register'}>Register</Link>
-                <a className="btn">Sing In</a>
+                <Link to={'/signIn'}>
+                <button className="btn">signIn</button>
+                </Link>
             </div>
         </div>
     );
