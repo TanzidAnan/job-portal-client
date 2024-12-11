@@ -1,44 +1,5 @@
-import Lottie from "lottie-react";
-import registerLottieData from '../../assets/lotty/register.json'
-import { useContext } from "react";
-import AuthContext from "../../context/AuthContext/AuthContext";
-import { sendEmailVerification } from "firebase/auth";
-import { auth } from "../../firebase/Firebase.init";
 
-
-const Register = () => {
-
-    const { createUser } = useContext(AuthContext);
-
-    const hendleRegister = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        console.log(email, password)
-        const emailregex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        const passwordregex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
-        if (!emailregex.test(email)) {
-           alert("email");
-           return
-        }
-        if(!passwordregex.test(password)){
-            alert('password');
-            return
-        }
-
-        createUser(email, password)
-            .then(result => {
-                console.log(result.user)
-                sendEmailVerification(auth.currentUser)
-                .then(() =>{
-                    console.log('varify email')
-                })
-            })
-            .catch(error => {
-                console.log(error.message)
-            })
-    }
+const SignIn = () => {
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
@@ -77,4 +38,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default SignIn;
