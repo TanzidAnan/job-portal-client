@@ -10,7 +10,7 @@ const Banner = () => {
                 <div className="flex-1">
                     <img
                         src={tame1}
-                        className="max-w-sm rounded-lg shadow-2xl" />
+                        className="max-w-sm w-64 rounded-[40px] shadow-2xl" />
                 </div>
                 <div className="flex-1">
                     <motion.h1
