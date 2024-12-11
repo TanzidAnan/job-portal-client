@@ -49,7 +49,8 @@ const Navber = () => {
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">
-                   <img src={jonIcon} alt="" />
+                   <img className="w-12" src={jonIcon} alt="" />
+                   <h3 className="text-2xl font-bold">Job portal</h3>
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
