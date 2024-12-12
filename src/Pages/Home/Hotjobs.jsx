@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import HotJobsCard from "./HotJobsCard";
 
 const Hotjobs = () => {
 
@@ -19,7 +20,7 @@ const Hotjobs = () => {
         <div>
             <div>
                 {
-                    jobs.map(job =>)
+                    jobs.map(job =><HotJobsCard key={job._id}></HotJobsCard>)
                 }
             </div>
         </div>
