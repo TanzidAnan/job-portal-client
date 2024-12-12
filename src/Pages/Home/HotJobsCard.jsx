@@ -1,4 +1,5 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const HotJobsCard = ({ job }) => {
     const { _id, title, company, description, company_logo, responsibilities, location, salaryRange } = job
@@ -19,20 +20,22 @@ const HotJobsCard = ({ job }) => {
                 </div>
                 <div className="card-body">
                     <h2 className="card-title">{title}
-                    <div className="badge badge-secondary">NEW</div>
+                        <div className="badge badge-secondary">NEW</div>
                     </h2>
                     <p>{description}</p>
                     <div className="flex gap-2 flex-wrap">
                         {
-                            responsibilities.map((skil,idx) =><p
-                            className="border rounded-lg text-center px-2 py-1 hover:bg-red-300 hover:text-black"
-                            key={idx}
+                            responsibilities.map((skil, idx) => <p
+                                className="border rounded-lg text-center px-2 py-1 hover:bg-red-300 hover:text-black"
+                                key={idx}
                             >{skil}</p>)
                         }
                     </div>
-                    <div className="card-actions justify-end">
+                    <div className="card-actions justify-end items-center mt-4">
                         <p>salary: {salaryRange.min} -{salaryRange.max}</p>
-                        <button className="btn btn-primary">Buy Now</button>
+                        <Link to={`/job/${_id}`}>
+                            <button className="btn btn-primary">Apply</button>
+                        </Link>
                     </div>
                 </div>
             </div>
