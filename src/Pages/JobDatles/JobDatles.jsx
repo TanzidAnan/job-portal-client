@@ -1,9 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const JobDatles = () => {
     const job = useLoaderData();
     console.log(job);
-    const {title,applicationDeadline,category,description,company } =job
+    const { _id,title, applicationDeadline, category, description, company } = job
     return (
         <div className="hero bg-base-200 min-h-[70vh]">
             <div className="hero-content text-center">
@@ -15,7 +15,9 @@ const JobDatles = () => {
                     <h1>{category}</h1>
                     <p>{applicationDeadline}</p>
                     <p>{company}</p>
-                    <button className="btn btn-primary">Apply Now</button>
+                    <Link to={`/jobApply/${_id}`}>
+                        <button className="btn btn-primary">Apply Now</button>
+                    </Link>
                 </div>
             </div>
         </div>
