@@ -4,6 +4,7 @@ import { useContext } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import { sendEmailVerification } from "firebase/auth";
 import { auth } from "../../firebase/Firebase.init";
+import GoogleSignIn from "../Shared/GoogleSignIn";
 
 
 const Register = () => {
@@ -70,6 +71,10 @@ const Register = () => {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                         </form>
+                        <div className="divider">or</div>
+                        <div className="flex justify-center py-3">
+                        <GoogleSignIn></GoogleSignIn>
+                        </div>
                     </div>
                 </div>
             </div>

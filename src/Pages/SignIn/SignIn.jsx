@@ -4,6 +4,7 @@ import loginlottyData from '../../assets/lotty/login.json'
 import { useContext } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import { auth } from '../../firebase/Firebase.init';
+import GoogleSignIn from '../Shared/GoogleSignIn';
 
 const SignIn = () => {
 
@@ -58,6 +59,10 @@ const SignIn = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <div className="divider">or</div>
+                        <div className="flex justify-center py-3">
+                        <GoogleSignIn></GoogleSignIn>
+                        </div>
                     </div>
                 </div>
             </div>
