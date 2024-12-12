@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/jobApply/:id',
-                element:<JobApply></JobApply>
+                element:<ParvateRoutes><JobApply></JobApply></ParvateRoutes>
             },
             {
                 path:'/register',
