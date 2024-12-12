@@ -1,14 +1,22 @@
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const HotJobsCard = ({ job }) => {
     const { _id, title, company, description, company_logo, responsibilities, location, salaryRange } = job
     return (
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">
-                <figure>
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes" />
-                </figure>
+                <div className="flex gap-2 mt-3">
+                    <figure>
+                        <img
+                            className="w-16"
+                            src={company_logo}
+                            alt="Shoes" />
+                    </figure>
+                    <div>
+                        <h3 className="text-2xl">{company}</h3>
+                        <p className="flex gap-2 items-center"><FaMapMarkerAlt /> {location}</p>
+                    </div>
+                </div>
                 <div className="card-body">
                     <h2 className="card-title">Shoes!</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
