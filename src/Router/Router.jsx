@@ -6,6 +6,7 @@ import Home from "../Pages/Home/Home";
 import Register from "../Pages/Register/Register";
 import SignIn from "../Pages/SignIn/SignIn";
 import JobDatles from "../Pages/JobDatles/JobDatles";
+import ParvateRoutes from "./ParvateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/job/:id',
-                element:<JobDatles></JobDatles>,
+                element:<ParvateRoutes><JobDatles></JobDatles></ParvateRoutes>,
                 loader:({params}) =>fetch(`http://localhost:5000/jobs/${params.id}`)
             },
             {
