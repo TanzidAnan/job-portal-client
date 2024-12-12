@@ -5,10 +5,15 @@ import { useContext } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import { auth } from '../../firebase/Firebase.init';
 import GoogleSignIn from '../Shared/GoogleSignIn';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
 
-    const {signInUser} =useContext(AuthContext)
+    const {signInUser} =useContext(AuthContext);
+    const location =useLocation();
+    const neveget =useNavigate()
+    const from =location?.state || '/'
+    console.log(location)
 
     const hendleLogin =(e) =>{
         e.preventDefault();
@@ -19,7 +24,8 @@ const SignIn = () => {
         console.log(email, password)
         signInUser(email,password)
         .then(result =>{
-            console.log(result.user)
+            console.log(result.user);
+            neveget(from)
         })
         .catch(error =>{
             console.log(error.message)

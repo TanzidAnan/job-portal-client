@@ -10,7 +10,7 @@ const Navber = () => {
     const hendleLogout = () => {
         logOUt()
             .then(() => {
-                alert('sign out')
+                // alert('sign out')
             })
             .catch(error => {
                 console.log(error.message)
