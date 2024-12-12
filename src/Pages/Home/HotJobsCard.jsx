@@ -18,9 +18,20 @@ const HotJobsCard = ({ job }) => {
                     </div>
                 </div>
                 <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <h2 className="card-title">{title}
+                    <div className="badge badge-secondary">NEW</div>
+                    </h2>
+                    <p>{description}</p>
+                    <div className="flex gap-2 flex-wrap">
+                        {
+                            responsibilities.map((skil,idx) =><p
+                            className="border rounded-lg text-center px-2 py-1 hover:bg-red-300 hover:text-black"
+                            key={idx}
+                            >{skil}</p>)
+                        }
+                    </div>
                     <div className="card-actions justify-end">
+                        <p>salary: {salaryRange.min} -{salaryRange.max}</p>
                         <button className="btn btn-primary">Buy Now</button>
                     </div>
                 </div>
