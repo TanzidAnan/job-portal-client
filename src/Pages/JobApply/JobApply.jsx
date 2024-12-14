@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const JobApply = () => {
     const { id } = useParams();
@@ -31,6 +32,15 @@ const JobApply = () => {
         .then(res=> res.json())
         .then(data =>{
             console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
         })
 
     }
@@ -59,7 +69,7 @@ const JobApply = () => {
                     <input type="url" name="Resume" placeholder="Resume" className="input input-bordered" required />
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary">Login</button>
+                    <button className="btn btn-primary">apply</button>
                 </div>
             </form>
         </div>
