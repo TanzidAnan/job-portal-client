@@ -1,11 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const JobApply = () => {
     const { id } = useParams();
-    const {user} =useAuth()
-    console.log(id,user);
+    const { user } = useAuth();
+    const naveget = useNavigate();
+    console.log(id, user);
 
     const hendleJobApplication = (e) => {
         e.preventDefault()
@@ -15,33 +16,34 @@ const JobApply = () => {
         const resume = form.Resume.value;
         console.log(linking, github, resume);
 
-        const jobApplication ={
-            job_id:id,
-            applicent_email:user.email,
+        const jobApplication = {
+            job_id: id,
+            applicent_email: user.email,
             linking,
             github,
             resume,
         }
-        fetch('http://localhost:5000/job_application',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        fetch('http://localhost:5000/job_application', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(jobApplication)
+            body: JSON.stringify(jobApplication)
         })
-        .then(res=> res.json())
-        .then(data =>{
-            console.log(data)
-            if(data.insertedId){
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Your work has been saved",
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your work has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    naveget('/myapplication')
+                }
+            })
 
     }
 
