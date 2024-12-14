@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const JobApply = () => {
     const { id } = useParams();
-    console.log(id);
+    const {user} =useAuth()
+    console.log(id,user);
 
     const hendleJobApplication = (e) => {
         e.preventDefault()
@@ -10,7 +12,16 @@ const JobApply = () => {
         const linking = form.linking.value;
         const github = form.github.value;
         const resume = form.Resume.value;
-        console.log(linking, github, resume)
+        console.log(linking, github, resume);
+
+        const jobApplication ={
+            job_id:id,
+            applicent_email:user.email,
+            linking,
+            github,
+            resume,
+        }
+
     }
 
     return (
