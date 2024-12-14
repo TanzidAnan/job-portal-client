@@ -15,7 +15,7 @@ const JobApply = () => {
 
     return (
 
-        <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl">
+        <div className="card bg-base-100 w-full shadow-2xl">
             <h1 className="text-5xl font-bold">apply job good luck</h1>
             <form onSubmit={hendleJobApplication} className="card-body">
                 <div className="form-control">
