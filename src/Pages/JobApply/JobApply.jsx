@@ -21,6 +21,17 @@ const JobApply = () => {
             github,
             resume,
         }
+        fetch('http://localhost:5000/job_application',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(jobApplication)
+        })
+        .then(res=> res.json())
+        .then(data =>{
+            console.log(data)
+        })
 
     }
 
