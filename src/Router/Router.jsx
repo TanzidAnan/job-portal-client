@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/myapplication',
-                element:<MyApplication></MyApplication>
+                element:<ParvateRoutes><MyApplication></MyApplication></ParvateRoutes>
             },
             {
                 path:'/register',
