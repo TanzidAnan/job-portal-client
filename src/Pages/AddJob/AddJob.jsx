@@ -13,7 +13,13 @@ const AddJob = () => {
         newJobs.descripation=newJobs.descripation.split('\n')
         console.log(newJobs);
 
-        fetch('',{})
+        fetch('',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newJobs)
+        })
         .then(res => res.json())
         .then(data =>{
             console.log(data)
