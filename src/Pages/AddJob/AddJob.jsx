@@ -86,15 +86,37 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">jon descripation</span>
                     </label>
-                    <textarea className="textarea textarea-primary" name="put eatc requment " placeholder="descripation" required></textarea>
+                    <textarea className="textarea textarea-primary" name="descripation" placeholder="put eatc requment" required></textarea>
                 </div>
-                {/* jobs requiments */}
+                {/* jobs responsebelety */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">jon descripation</span>
+                        <span className="label-text">jon responsebelety</span>
                     </label>
-                    <textarea className="textarea textarea-primary" name="put eatc requment " placeholder="descripation" required></textarea>
+                    <textarea className="textarea textarea-primary" name="responsebelety" placeholder=" write eatc responsebelety" required></textarea>
                 </div>
+                 {/* HR Name */}
+                 <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">HR name</span>
+                    </label>
+                    <input type="text" name="hr_name" placeholder="HR name" className="input input-bordered" required />
+                </div>
+                 {/* HR email */}
+                 <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">HR email</span>
+                    </label>
+                    <input type="text" name="hr_email" placeholder="HR email" className="input input-bordered" required />
+                </div>
+                 {/* HR email */}
+                 <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">company logo</span>
+                    </label>
+                    <input type="text" name="conpany_logo" placeholder="conpany_logo" className="input input-bordered" required />
+                </div>
+
                 {/* submit */}
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Login</button>
