@@ -47,7 +47,7 @@ const AddJob = () => {
                 {/* salary range*/}
                 <p></p>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-3 items-end">
-                  
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">salary range</span>
@@ -66,6 +66,20 @@ const AddJob = () => {
                         </select>
 
                     </div>
+                </div>
+                {/* company Name */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">company name</span>
+                    </label>
+                    <input type="text" name="compan" placeholder="company name" className="input input-bordered" required />
+                </div>
+                {/* jobs descripation */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">jon descripation</span>
+                    </label>
+                    <textarea className="textarea textarea-primary" name="descripation" placeholder="descripation" required></textarea>
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Login</button>
