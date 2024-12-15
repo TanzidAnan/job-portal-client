@@ -11,7 +11,13 @@ const AddJob = () => {
         newJobs.salaryRange={min,max,currence}
         newJobs.responsebelety=newJobs.responsebelety.split('\n')
         newJobs.descripation=newJobs.descripation.split('\n')
-        console.log(newJobs)
+        console.log(newJobs);
+
+        fetch('',{})
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
     }
 
     return (
