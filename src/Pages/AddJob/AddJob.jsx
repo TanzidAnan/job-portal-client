@@ -10,6 +10,7 @@ const AddJob = () => {
         const {min,max,currence, ...newJobs} =initialData;
         newJobs.salaryRange={min,max,currence}
         newJobs.responsebelety=newJobs.responsebelety.split('\n')
+        newJobs.descripation=newJobs.descripation.split('\n')
         console.log(newJobs)
     }
 
