@@ -6,7 +6,10 @@ const AddJob = () => {
         const fromData =new FormData(e.target);
         console.log(fromData.entries());
         const initialData =Object.fromEntries(fromData.entries())
-        console.log(initialData)
+        // console.log(initialData)
+        const {min,max,currence, ...newJobs} =initialData;
+        newJobs.salaryRange={min,max,currence}
+        console.log(newJobs)
     }
 
     return (
@@ -45,7 +48,7 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">jobs fild</span>
                     </label>
-                    <select className="select select-ghost w-full max-w-xs">
+                    <select name="jobType" className="select select-ghost w-full max-w-xs">
                         <option disabled selected>Pick the job type</option>
                         <option>Engineering</option>
                         <option>markting</option>
@@ -67,7 +70,7 @@ const AddJob = () => {
                         <input type="text" name="max" placeholder="max" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
-                        <select className="select select-ghost w-full max-w-xs">
+                        <select name="currence" className="select select-ghost w-full max-w-xs">
                             <option disabled selected>currence</option>
                             <option>BDT</option>
                             <option>USD</option>
