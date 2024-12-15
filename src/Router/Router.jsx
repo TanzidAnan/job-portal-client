@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addjob',
-                element:<AddJob></AddJob>
+                element:<ParvateRoutes><AddJob></AddJob></ParvateRoutes>
             },
             {
                 path:'/register',
