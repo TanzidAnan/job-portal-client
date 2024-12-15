@@ -9,7 +9,8 @@ const AddJob = () => {
         // console.log(initialData)
         const {min,max,currence, ...newJobs} =initialData;
         newJobs.salaryRange={min,max,currence}
-        // console.log(newJobs)
+        newJobs.responsebelety=newJobs.responsebelety.split('\n')
+        console.log(newJobs)
     }
 
     return (
