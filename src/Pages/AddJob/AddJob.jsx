@@ -1,9 +1,18 @@
 
 const AddJob = () => {
+
+    const hendleAddJobs =(e) =>{
+        e.preventDefault();
+        const fromData =new FormData(e.target);
+        console.log(fromData.entries());
+        const initialData =Object.fromEntries(fromData.entries())
+        console.log(initialData)
+    }
+
     return (
         <div>
             <h2 className="text-2xl">Post a new jobs</h2>
-            <form className="card-body">
+            <form onSubmit={hendleAddJobs} className="card-body">
                 {/* jobs title */}
                 <div className="form-control">
                     <label className="label">
