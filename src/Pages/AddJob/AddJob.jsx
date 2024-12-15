@@ -1,5 +1,11 @@
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth";
 
 const AddJob = () => {
+    const neveget =useNavigate();
+    const {user} =useAuth();
+    console.log(user)
 
     const hendleAddJobs =(e) =>{
         e.preventDefault();
@@ -13,7 +19,7 @@ const AddJob = () => {
         newJobs.descripation=newJobs.descripation.split('\n')
         console.log(newJobs);
 
-        fetch('',{
+        fetch('http://localhost:5000/jobs',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -23,6 +29,16 @@ const AddJob = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  neveget('/')
+            }
         })
     }
 
@@ -49,8 +65,8 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">jobs Location</span>
                     </label>
-                    <select className="select select-ghost w-full max-w-xs">
-                        <option disabled selected>Pick the job type</option>
+                    <select defaultValue='Pick the job type' className="select select-ghost w-full max-w-xs">
+                        <option disabled>Pick the job type</option>
                         <option>full time</option>
                         <option>pat time</option>
                         <option>remote</option>
@@ -62,8 +78,8 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">jobs fild</span>
                     </label>
-                    <select name="jobType" className="select select-ghost w-full max-w-xs">
-                        <option disabled selected>Pick the job type</option>
+                    <select defaultValue='Pick the job type' name="jobType" className="select select-ghost w-full max-w-xs">
+                        <option disabled>Pick the job type</option>
                         <option>Engineering</option>
                         <option>markting</option>
                         <option>Fincens</option>
@@ -84,8 +100,8 @@ const AddJob = () => {
                         <input type="text" name="max" placeholder="max" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
-                        <select name="currence" className="select select-ghost w-full max-w-xs">
-                            <option disabled selected>currence</option>
+                        <select defaultValue='currence' name="currence" className="select select-ghost w-full max-w-xs">
+                            <option disabled >currence</option>
                             <option>BDT</option>
                             <option>USD</option>
                             <option>Fincens</option>
@@ -133,7 +149,7 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">HR email</span>
                     </label>
-                    <input type="text" name="hr_email" placeholder="HR email" className="input input-bordered" required />
+                    <input type="email" name="hr_email" defaultValue={user?.email} placeholder="HR email" className="input input-bordered" required />
                 </div>
                  {/* HR email */}
                  <div className="form-control">
