@@ -81,6 +81,21 @@ const AddJob = () => {
                     </label>
                     <textarea className="textarea textarea-primary" name="descripation" placeholder="descripation" required></textarea>
                 </div>
+                {/* jobs requiments */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">jon descripation</span>
+                    </label>
+                    <textarea className="textarea textarea-primary" name="put eatc requment " placeholder="descripation" required></textarea>
+                </div>
+                {/* jobs requiments */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">jon descripation</span>
+                    </label>
+                    <textarea className="textarea textarea-primary" name="put eatc requment " placeholder="descripation" required></textarea>
+                </div>
+                {/* submit */}
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Login</button>
                 </div>
