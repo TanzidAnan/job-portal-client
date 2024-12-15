@@ -9,6 +9,7 @@ import JobDatles from "../Pages/JobDatles/JobDatles";
 import ParvateRoutes from "./ParvateRoutes";
 import JobApply from "../Pages/JobApply/JobApply";
 import MyApplication from "../Pages/MyApplication/MyApplication";
+import AddJob from "../Pages/AddJob/AddJob";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path:'/myapplication',
                 element:<ParvateRoutes><MyApplication></MyApplication></ParvateRoutes>
+            },
+            {
+                path:'/addjob',
+                element:<AddJob></AddJob>
             },
             {
                 path:'/register',

@@ -21,7 +21,7 @@ const Navber = () => {
     const links = <>
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/myapplication'}>my application</Link></li>
-        <li><a>Item 3</a></li>
+        <li><Link to={'/addjob'}>Add Jobs</Link></li>
     </>
 
 
