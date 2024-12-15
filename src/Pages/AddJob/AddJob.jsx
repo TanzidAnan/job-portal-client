@@ -6,7 +6,7 @@ const AddJob = () => {
         const fromData =new FormData(e.target);
         console.log(fromData.entries());
         const initialData =Object.fromEntries(fromData.entries())
-        // console.log(initialData)
+        console.log(initialData)
         const {min,max,currence, ...newJobs} =initialData;
         newJobs.salaryRange={min,max,currence}
         console.log(newJobs)
