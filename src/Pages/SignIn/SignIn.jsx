@@ -6,6 +6,7 @@ import AuthContext from '../../context/AuthContext/AuthContext';
 import { auth } from '../../firebase/Firebase.init';
 import GoogleSignIn from '../Shared/GoogleSignIn';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const SignIn = () => {
 
@@ -24,7 +25,12 @@ const SignIn = () => {
         console.log(email, password)
         signInUser(email,password)
         .then(result =>{
-            console.log(result.user);
+            console.log(result.user.email);
+            const user ={email:email}
+            axios.post('http://localhost:5000/jwt',user)
+            .then(data =>{
+                console.log(data)
+            })
             neveget(from)
         })
         .catch(error =>{
