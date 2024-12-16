@@ -1,23 +1,34 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ViewApplication = () => {
     const application = useLoaderData();
 
-    const hendlestatusUpdate=(e,id) =>{
-        const data ={
-            status:e.target.value
+    const hendlestatusUpdate = (e, id) => {
+        const data = {
+            status: e.target.value
         }
-        fetch(`http://localhost:5000/job_application/${id}`,{
-            method:'PATCH',
-            headers:{
-                'content-type':'application/json'
+        fetch(`http://localhost:5000/job_application/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(data)
+            body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your work has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     }
 
     return (
@@ -44,9 +55,9 @@ const ViewApplication = () => {
                                 <td>Quality Control Specialist</td>
                                 <td>
                                     <select
-                                    onChange={(e) =>hendlestatusUpdate(e,app._id)}
-                                    defaultValue={app.status || 'change status'}
-                                    className="select select-bordered select-xs w-full max-w-xs">
+                                        onChange={(e) => hendlestatusUpdate(e, app._id)}
+                                        defaultValue={app.status || 'change status'}
+                                        className="select select-bordered select-xs w-full max-w-xs">
                                         <option disabled >change status</option>
                                         <option>under reviue</option>
                                         <option>Tiny Orange</option>
