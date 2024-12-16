@@ -3,8 +3,21 @@ import { useLoaderData } from "react-router-dom";
 const ViewApplication = () => {
     const application = useLoaderData();
 
-    const hendlestatusUpdate=e =>{
-
+    const hendlestatusUpdate=(e,id) =>{
+        const data ={
+            status:e.target.value
+        }
+        fetch(`http://localhost:5000/job_application/${id}`,{
+            method:'PATCH',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
     }
 
     return (
