@@ -25,6 +25,7 @@ const MyPostJobs = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Job</th>
+                            <th>application</th>
                             <th>Favorite Color</th>
                         </tr>
                     </thead>
@@ -35,7 +36,7 @@ const MyPostJobs = () => {
                                 <th>{idx +1}</th>
                                 <td>{job.title}</td>
                                 <td>{job.applicationDeadline}</td>
-                                <td>Blue</td>
+                                <td>{job.applicationCount}</td>
                             </tr>)
                         }
 
