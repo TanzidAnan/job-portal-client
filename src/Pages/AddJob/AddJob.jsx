@@ -13,10 +13,10 @@ const AddJob = () => {
         console.log(fromData.entries());
         const initialData =Object.fromEntries(fromData.entries())
         // console.log(initialData)
-        const {min,max,currence, ...newJobs} =initialData;
-        newJobs.salaryRange={min,max,currence}
-        newJobs.responsebelety=newJobs.responsebelety.split('\n')
-        newJobs.descripation=newJobs.descripation.split('\n')
+        const {min,max,currency, ...newJobs} =initialData;
+        newJobs.salaryRange={min,max,currency}
+        newJobs.requirements=newJobs.requirements.split('\n')
+        newJobs.responsibilities=newJobs.responsibilities.split('\n')
         console.log(newJobs);
 
         fetch('http://localhost:5000/jobs',{
@@ -65,7 +65,7 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">jobs Location</span>
                     </label>
-                    <select defaultValue='Pick the job type' className="select select-ghost w-full max-w-xs">
+                    <select name="jobType" defaultValue='Pick the job type' className="select select-ghost w-full max-w-xs">
                         <option disabled>Pick the job type</option>
                         <option>full time</option>
                         <option>pat time</option>
@@ -78,7 +78,7 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">jobs fild</span>
                     </label>
-                    <select defaultValue='Pick the job type' name="jobType" className="select select-ghost w-full max-w-xs">
+                    <select defaultValue='Pick the job type' name="category" className="select select-ghost w-full max-w-xs">
                         <option disabled>Pick the job type</option>
                         <option>Engineering</option>
                         <option>markting</option>
@@ -100,7 +100,7 @@ const AddJob = () => {
                         <input type="text" name="max" placeholder="max" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
-                        <select defaultValue='currence' name="currence" className="select select-ghost w-full max-w-xs">
+                        <select defaultValue='currence' name="currency" className="select select-ghost w-full max-w-xs">
                             <option disabled >currence</option>
                             <option>BDT</option>
                             <option>USD</option>
@@ -114,28 +114,28 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">company name</span>
                     </label>
-                    <input type="text" name="compan" placeholder="company name" className="input input-bordered" required />
+                    <input type="text" name="company" placeholder="company name" className="input input-bordered" required />
                 </div>
                 {/* jobs descripation */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">jon descripation</span>
                     </label>
-                    <textarea className="textarea textarea-primary" name="descripation" placeholder="descripation" required></textarea>
+                    <textarea className="textarea textarea-primary" name="description" placeholder="descripation" required></textarea>
                 </div>
                 {/* jobs requiments */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">jon descripation</span>
                     </label>
-                    <textarea className="textarea textarea-primary" name="descripation" placeholder="put eatc requment" required></textarea>
+                    <textarea className="textarea textarea-primary" name="requirements" placeholder="put eatc requment" required></textarea>
                 </div>
                 {/* jobs responsebelety */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">jon responsebelety</span>
                     </label>
-                    <textarea className="textarea textarea-primary" name="responsebelety" placeholder=" write eatc responsebelety" required></textarea>
+                    <textarea className="textarea textarea-primary" name="responsibilities" placeholder=" write eatc responsebelety" required></textarea>
                 </div>
                  {/* HR Name */}
                  <div className="form-control">
@@ -151,12 +151,19 @@ const AddJob = () => {
                     </label>
                     <input type="email" name="hr_email" defaultValue={user?.email} placeholder="HR email" className="input input-bordered" required />
                 </div>
-                 {/* HR email */}
+                 {/* companiy logo */}
                  <div className="form-control">
                     <label className="label">
                         <span className="label-text">company logo</span>
                     </label>
-                    <input type="text" name="conpany_logo" placeholder="conpany_logo" className="input input-bordered" required />
+                    <input type="text" name="conpany_logo" placeholder="company_logo" className="input input-bordered" required />
+                </div>
+                 {/* applicationDeadline  */}
+                 <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">applicationDeadline</span>
+                    </label>
+                    <input type="text" name="applicationDeadline" placeholder="applicationDeadline" className="input input-bordered" required />
                 </div>
 
                 {/* submit */}
