@@ -42,7 +42,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/viewapplication/:job_id',
-                element:<ParvateRoutes><ViewApplication></ViewApplication></ParvateRoutes>
+                element:<ParvateRoutes><ViewApplication></ViewApplication></ParvateRoutes>,
+                loader:({params}) => fetch(`http://localhost:5000/job_application/jobs/${params.job_id}`)
             },
             {
                 path:'/mypostedjobs',
