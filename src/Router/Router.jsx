@@ -11,6 +11,7 @@ import JobApply from "../Pages/JobApply/JobApply";
 import MyApplication from "../Pages/MyApplication/MyApplication";
 import AddJob from "../Pages/AddJob/AddJob";
 import MyPostJobs from "../Pages/MyPostJobs/MyPostJobs";
+import ViewApplication from "../Pages/ViewApplication/ViewApplication";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path:'/addjob',
                 element:<ParvateRoutes><AddJob></AddJob></ParvateRoutes>
+            },
+            {
+                path:'/viewapplication/:job_id',
+                element:<ParvateRoutes><ViewApplication></ViewApplication></ParvateRoutes>
             },
             {
                 path:'/mypostedjobs',
